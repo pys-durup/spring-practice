@@ -2,7 +2,12 @@
 servlet/.gitignore
 servlet/gradle
 
+### springmvc ###
+springmvc/.gitignore
+springmvc/gradle
 
+
+gitmessage.txt
 HELP.md
 .gradle
 build/
