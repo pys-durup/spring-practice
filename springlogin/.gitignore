@@ -1,17 +1,3 @@
-### servlet ###
-servlet/.gitignore
-servlet/gradle
-
-### springmvc ###
-springmvc/.gitignore
-springmvc/gradle
-
-### item-service ###
-item-service/.gitignore
-item-service/gradle
-
-
-gitmessage.txt
 HELP.md
 .gradle
 build/
