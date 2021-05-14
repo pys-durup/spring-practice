@@ -2,7 +2,9 @@ package com.practice.springlogin.repository;
 
 import com.practice.springlogin.model.Member;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class MemoryMemberRepository implements MemberRepository {
@@ -18,14 +20,14 @@ public class MemoryMemberRepository implements MemberRepository {
     }
 
     @Override
-    public Member findById(Long id) {
-        Member member = store.get(id);
+    public Member findBySeq(Long seq) {
+        Member member = store.get(seq);
         return member;
     }
 
     @Override
-    public Member edit(Long id, Member member) {
-        store.put(member.getSeq(), member);
+    public Member edit(Long seq, Member member) {
+        store.put(seq, member);
         return member;
     }
 
@@ -33,6 +35,13 @@ public class MemoryMemberRepository implements MemberRepository {
     public void delete(Long id) {
         store.remove(id);
     }
+
+
+    @Override
+    public List<Member> list() {
+        return new ArrayList<>(store.values());
+    }
+
 
     @Override
     public void clear() {
