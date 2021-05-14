@@ -58,7 +58,7 @@ class MemoryMemberRepositoryTest {
         repository.delete(savedMember1.getSeq());
 
         //then
-        Assertions.assertThat(repository.findById(savedMember1.getSeq())).isEqualTo(null);
+        Assertions.assertThat(repository.findBySeq(savedMember1.getSeq())).isEqualTo(null);
 
     }
 }
