@@ -5,6 +5,7 @@ import com.practice.springlogin.service.MemberService;
 import com.practice.springlogin.service.MemberServiceImpl;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -17,7 +18,6 @@ public class MemberController {
 
     @GetMapping
     public String index() {
-
         return "member/index";
     }
 
@@ -27,19 +27,29 @@ public class MemberController {
         return "member/signupForm";
     }
 
+    @GetMapping("logout")
+    public String logout(HttpServletRequest request) {
+        HttpSession session = request.getSession();
+        session.invalidate();
+        return "member/index";
+    }
+
     @PostMapping("auth")
     public String signupForm(@RequestParam String id,
                              @RequestParam String password,
-                             HttpServletRequest request) {
+                             HttpServletRequest request,
+                             RedirectAttributes redirectAttributes) {
 
         HttpSession session = request.getSession();
-        Member checked = memberService.login(id, password);
+        Member loginMember = memberService.login(id, password);
 
-        if (checked == null) {
-            return "xxx";
+        if (loginMember == null) {
+            session.setAttribute("member", null);
+            redirectAttributes.addFlashAttribute("msg", "로그인 실패");
         } else {
-            return "member/index";
+            session.setAttribute("member", loginMember);
         }
+        return "redirect:/member/account";
     }
 
     @GetMapping("auth")

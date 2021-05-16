@@ -8,12 +8,26 @@
     <title>Document</title>
 
     <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet" href="css/bootstrap.min.css">
+
 </head>
 <body>
     <h2>Spring boot 로그인 테스트</h2>
 
-    <button class="btn btn-primary" type="submit" th:onclick="|location.href='@{/member/account/signup}'|" onclick="location.href='signupForm.html'">회원 가입</button>
-    <button class="btn btn-default" type="submit" th:onclick="|location.href='@{/member/account/auth}'|" onclick="location.href='loginForm.html'">로그인</button>
+    <div th:if="${session.member} == null">
+        <button  class="btn btn-primary" th:onclick="|location.href='@{/member/account/signup}'|" onclick="location.href='signupForm.html'">회원 가입</button>
+        <button  class="btn btn-default" th:onclick="|location.href='@{/member/account/auth}'|" onclick="location.href='loginForm.html'">로그인</button>
+    </div>
+
+    <div th:unless="${session.member} == null">
+        <h3>[[${session.member.id}]]님 안녕하세요</h3>
+        <button class="btn btn-danger" th:onclick="|location.href='@{/member/account/logout}'|"
+                onclick="location.href='signupForm.html'">로그아웃</button>
+    </div>
+
+
+
+
+
 
 </body>
 </html>
