@@ -19,7 +19,9 @@
     </div>
 
     <div th:unless="${session.member} == null">
-        <h3>[[${session.member.id}]]님 안녕하세요</h3>
+        <h3>[[${member.id}]]님 안녕하세요</h3>
+        <button class="btn btn-primary" th:onclick="|location.href='@{/member/account/{seq}(seq=${member.seq})}'|"
+                onclick="location.href='signupForm.html'">내정보</button>
         <button class="btn btn-danger" th:onclick="|location.href='@{/member/account/logout}'|"
                 onclick="location.href='signupForm.html'">로그아웃</button>
     </div>

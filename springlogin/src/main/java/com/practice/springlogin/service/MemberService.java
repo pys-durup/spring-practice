@@ -6,5 +6,7 @@ public interface MemberService {
 
     void signUp(Member member);
     Member login(String id, String password);
+    Member myInfo(Long seq);
+    void myInfoEdit(Member member);
 
 }

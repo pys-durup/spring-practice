@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet" href="css/bootstrap.css">
+</head>
+<body>
+    <div class="container">
+        <div class="py-5 text-center">
+            <h2>내 정보</h2>
+        </div>
+        <form th:action="|@{/member/account/{seq}/edit(seq=${member.seq})}|" method="get">
+            <div>
+                <label for="itemName">회원 이메일</label>
+                <input type="text" id="itemName" name="id" class="form-control" th:value="${member.id}" readonly>
+            </div>
+            <div>
+                <label for="price">비밀번호</label>
+                <input type="text" id="price" name="password" class="form-control" th:value="${member.password}" readonly>
+            </div>
+            <div>
+                <label for="quantity">닉네임</label>
+                <input type="text" id="quantity" name="nickname" class="form-control" th:value="${member.nickname}" readonly>
+            </div>
+            <hr class="my-4">
+            <div class="row">
+                <div class="col">
+                    <button class="btn btn-primary" th:onclick="|location.href='@{/member/account/{seq}/edit(seq=${member.seq})}'|">정보 수정</button>
+                    <button class="btn btn-secondary"
+                            th:onclick="|location.href='@{/member/account}'|"
+                            onclick="location.href='index.html'" type="button">취소
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div> <!-- /container -->
+    </body>
+</html>
