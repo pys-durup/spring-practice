@@ -28,6 +28,6 @@ public class TestRunner implements ApplicationRunner {
         System.out.println("UserName: " + connection.getMetaData().getUserName());
 
         // JdbcTemplate
-        jdbcTemplate.execute("INSERT INTO member (id, password, nickname) values ('durup', 1234, 'durup')");
+//        jdbcTemplate.execute("INSERT INTO member (id, password, nickname) values ('durup', 1234, 'durup')");
     }
 }

@@ -20,4 +20,10 @@
       WHERE id = #{id} and password = #{password}
     </select>
 
+    <update id="myInfoEdit" parameterType="Member">
+      UPDATE Member
+      SET id = #{id}, password = #{password}, nickname = #{nickname}
+      WHERE seq = #{seq}
+    </update>
+
 </mapper>

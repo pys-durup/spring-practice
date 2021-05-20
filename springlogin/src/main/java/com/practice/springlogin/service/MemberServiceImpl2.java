@@ -34,6 +34,8 @@ public class MemberServiceImpl2 implements MemberService{
 
     @Override
     public void myInfoEdit(Member member) {
-
+        System.out.println("member.getId() = " + member.getId());
+        System.out.println("member.getSeq() = " + member.getSeq());
+        memberMapper.myInfoEdit(member);
     }
 }
