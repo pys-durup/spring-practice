@@ -10,4 +10,14 @@
       VALUES (#{id}, #{password}, #{nickname})
     </insert>
 
+    <select id="findBySeq" parameterType="Long" resultType="Member">
+      SELECT * FROM Member
+      WHERE seq = #{seq}
+    </select>
+
+    <select id="loginCheck" parameterType="loginDTO" resultType="Member">
+      SELECT * FROM Member
+      WHERE id = #{id} and password = #{password}
+    </select>
+
 </mapper>

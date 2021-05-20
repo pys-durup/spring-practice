@@ -1,6 +1,7 @@
 package com.practice.springlogin.service;
 
 import com.practice.springlogin.model.Member;
+import com.practice.springlogin.model.loginDTO;
 import com.practice.springlogin.repository.MemberMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -22,12 +23,13 @@ public class MemberServiceImpl2 implements MemberService{
 
     @Override
     public Member login(String id, String password) {
-        return null;
+        loginDTO loginDTO = new loginDTO(id, password);
+        return memberMapper.loginCheck(loginDTO);
     }
 
     @Override
     public Member myInfo(Long seq) {
-        return null;
+        return memberMapper.findBySeq(seq);
     }
 
     @Override
