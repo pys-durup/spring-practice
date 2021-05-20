@@ -3,6 +3,7 @@ package com.practice.springlogin.controller;
 import com.practice.springlogin.model.Member;
 import com.practice.springlogin.service.MemberService;
 import com.practice.springlogin.service.MemberServiceImpl;
+import com.practice.springlogin.service.MemberServiceImpl2;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -18,7 +19,7 @@ public class MemberController {
 
     private final MemberService memberService;
 
-    public MemberController(MemberService memberService) {
+    public MemberController(MemberServiceImpl2 memberService) {
         this.memberService = memberService;
     }
 

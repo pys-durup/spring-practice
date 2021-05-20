@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 import javax.sql.DataSource;
 import java.util.List;
 
-@Service
+//@Service
 public class MemberServiceImpl implements MemberService{
 
     private final MemberRepository repository;
@@ -21,7 +21,7 @@ public class MemberServiceImpl implements MemberService{
 //        this.dataSource = dataSource;
 //        this.repository = new H2MemberRepository(dataSource);
 //    }
-    @Autowired
+//    @Autowired
     public MemberServiceImpl() {
         this.repository = new MemoryMemberRepository();
     }
