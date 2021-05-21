@@ -10,6 +10,17 @@ springmvc/gradle
 item-service/.gitignore
 item-service/gradle
 
+### springlogin ###
+### 실패 코드 ### 
+springlogin/
+
+
+### securityformlogin ###
+securityformlogin/gradle/
+securityformlogin/.gitignore
+securityformlogin/.idea
+securityformlogin/out/
+
 
 gitmessage.txt
 HELP.md
