@@ -9,6 +9,7 @@ import org.springframework.stereotype.Repository;
 public interface MemberMapper {
     void insertMember(Member member);
     Member findBySeq(Long seq);
+    Member findById(String id);
     Member loginCheck(loginDTO loginDTO);
     void myInfoEdit(Member member);
 }

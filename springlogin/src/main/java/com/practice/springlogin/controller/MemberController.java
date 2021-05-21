@@ -121,14 +121,4 @@ public class MemberController {
 
         return "redirect:/member/account/{seq}";
     }
-
-
-
-
-
-
-
-
-
-
 }

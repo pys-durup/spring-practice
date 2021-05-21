@@ -15,6 +15,11 @@
       WHERE seq = #{seq}
     </select>
 
+    <select id="findById" parameterType="String" resultType="Member">
+          SELECT * FROM Member
+          WHERE id = #{id}
+        </select>
+
     <select id="loginCheck" parameterType="loginDTO" resultType="Member">
       SELECT * FROM Member
       WHERE id = #{id} and password = #{password}

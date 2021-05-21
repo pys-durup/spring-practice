@@ -25,6 +25,7 @@ dependencies {
 	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 
+	implementation 'org.springframework.boot:spring-boot-starter-security'
 
 	compile 'org.springframework.boot:spring-boot-starter-jdbc'
 	compile 'org.mybatis.spring.boot:mybatis-spring-boot-starter:2.1.3'

@@ -14,12 +14,20 @@
     <h2>Spring boot 로그인 테스트</h2>
 
     <div th:if="${session.member} == null">
+        <button class="btn btn-primary" th:onclick="|location.href='@{/member/account/authenticated}'|"
+                onclick="location.href='signupForm.html'">권한있는</button>
+        <button class="btn btn-primary" th:onclick="|location.href='@{/admin/account/unAuthenticated}'|"
+                onclick="location.href='signupForm.html'">권한없는</button>
         <button  class="btn btn-primary" th:onclick="|location.href='@{/member/account/signup}'|" onclick="location.href='signupForm.html'">회원 가입</button>
         <button  class="btn btn-default" th:onclick="|location.href='@{/member/account/auth}'|" onclick="location.href='loginForm.html'">로그인</button>
     </div>
 
     <div th:unless="${session.member} == null">
         <h3>[[${member.id}]]님 안녕하세요</h3>
+        <button class="btn btn-primary" th:onclick="|location.href='@{/member/account/authenticated}'|"
+                onclick="location.href='signupForm.html'">권한있는</button>
+        <button class="btn btn-primary" th:onclick="|location.href='@{/admin/account/unAuthenticated}'|"
+                onclick="location.href='signupForm.html'">권한없는</button>
         <button class="btn btn-primary" th:onclick="|location.href='@{/member/account/{seq}(seq=${member.seq})}'|"
                 onclick="location.href='signupForm.html'">내정보</button>
         <button class="btn btn-danger" th:onclick="|location.href='@{/member/account/logout}'|"
