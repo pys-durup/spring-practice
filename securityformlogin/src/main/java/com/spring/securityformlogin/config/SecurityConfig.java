@@ -1,6 +1,7 @@
 package com.spring.securityformlogin.config;
 
 import com.spring.securityformlogin.handler.MyLoginSuccessHandler;
+import com.spring.securityformlogin.handler.MyLogoutSuccessHandler;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -26,7 +27,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                     .loginProcessingUrl("/doLogin")
                     .usernameParameter("id")
                     .passwordParameter("pw")
-                    .successHandler(new MyLoginSuccessHandler());
+                    .successHandler(new MyLoginSuccessHandler())
+                .and()
+                .logout()
+                    .logoutUrl("/logout")
+                    .logoutSuccessUrl("/login")
+                    .logoutSuccessHandler(new MyLogoutSuccessHandler());
     }
 }
 

@@ -19,13 +19,4 @@ public class LoginController {
 
         return "loginPage";
     }
-
-    @PostMapping("/doLogin")
-    public String login() {
-        // 로그인 검증 로직 - 성공
-        return "redirect:/main";
-
-        // 로그인 검증 로직 - 실패
-
-    }
 }
