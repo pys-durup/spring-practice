@@ -1,3 +1,11 @@
+### form ###
+form/.gitignore
+form/gradle
+
+### thymeleaf-basic ###
+thymeleaf-basic/.gitignore
+thymeleaf-basic/gradle
+
 ### servlet ###
 servlet/.gitignore
 servlet/gradle
