@@ -1,3 +1,7 @@
+### message ###
+message/.gitignore
+message/gradle
+
 ### form ###
 form/.gitignore
 form/gradle
