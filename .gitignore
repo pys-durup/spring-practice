@@ -1,3 +1,7 @@
+### validation ##
+validation/.gitignore
+validation/gradle
+
 ### message ###
 message/.gitignore
 message/gradle
