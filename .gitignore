@@ -1,3 +1,18 @@
+### webclient ###
+webclient
+webclient/HELP.md
+webclient/.gradle
+webclient/build/
+webclient/!gradle/wrapper/gradle-wrapper.jar
+webclient/!**/src/main/**/build/
+webclient/!**/src/test/**/build/
+webclient/.idea
+webclient/*.iws
+webclient/*.iml
+webclient/*.ipr
+webclient/out/
+
+
 ### validation ##
 validation/.gitignore
 validation/gradle
