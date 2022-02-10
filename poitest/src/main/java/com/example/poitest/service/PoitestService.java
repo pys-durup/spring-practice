@@ -154,7 +154,7 @@ public class PoitestService {
          */
         String[] headers = headerData.split(",");
 
-        sxssfWorkbook = new SXSSFWorkbook(1000);
+        sxssfWorkbook = new SXSSFWorkbook(10000);
         Sheet sheet = sxssfWorkbook.createSheet();
 
         Row row = null;
@@ -185,13 +185,13 @@ public class PoitestService {
                     cell.setCellValue(temp);
                 }
 
-                System.out.println("rNum -> " + rNum);
+//                System.out.println("rNum -> " + rNum);
 
-                if (rNum % 1000 == 1) {
+                if (rNum % 10000 == 1) {
                     System.out.println("flush !!");
 
                     try {
-                        ((SXSSFSheet)sheet).flushRows(1000);
+                        ((SXSSFSheet)sheet).flushRows(10000);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
